@@ -15,6 +15,7 @@
 		F590A4222178A585009CFBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F590A4202178A585009CFBC7 /* LaunchScreen.storyboard */; };
 		F590A4252178A585009CFBC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A4242178A585009CFBC7 /* main.m */; };
 		F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A42E2179779E009CFBC7 /* ZXConstants.m */; };
+		F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,9 @@
 		F590A42B217976B7009CFBC7 /* Drink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drink-Prefix.pch"; sourceTree = "<group>"; };
 		F590A42D2179779E009CFBC7 /* ZXConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXConstants.h; sourceTree = "<group>"; };
 		F590A42E2179779E009CFBC7 /* ZXConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXConstants.m; sourceTree = "<group>"; };
+		F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZXCornerRadius.m"; sourceTree = "<group>"; };
+		F5D87F9121A6C34D006E82F7 /* UIView+ZXCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZXCornerRadius.h"; sourceTree = "<group>"; };
+		F5D87F9321A6C56B006E82F7 /* Adaption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adaption.h; sourceTree = "<group>"; };
 		FDBB06E9893B7E5AC0126F00 /* Pods-Drink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Drink/Pods-Drink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +110,19 @@
 			children = (
 				F590A42D2179779E009CFBC7 /* ZXConstants.h */,
 				F590A42E2179779E009CFBC7 /* ZXConstants.m */,
+				F5D87F8F21A6C34D006E82F7 /* Category */,
+				F5D87F9321A6C56B006E82F7 /* Adaption.h */,
 			);
 			path = ZXTool;
+			sourceTree = "<group>";
+		};
+		F5D87F8F21A6C34D006E82F7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */,
+				F5D87F9121A6C34D006E82F7 /* UIView+ZXCornerRadius.h */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +222,7 @@
 				F590A4252178A585009CFBC7 /* main.m in Sources */,
 				F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */,
 				F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */,
+				F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTMKG6EH2C;
+				GCC_PREFIX_HEADER = "Drink/Drink-Prefix.pch";
 				INFOPLIST_FILE = Drink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,6 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTMKG6EH2C;
+				GCC_PREFIX_HEADER = "Drink/Drink-Prefix.pch";
 				INFOPLIST_FILE = Drink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

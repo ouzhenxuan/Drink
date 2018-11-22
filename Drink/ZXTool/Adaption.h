@@ -1,28 +1,15 @@
 //
-//  ZXConstants.h
+//  Adaption.h
 //  Drink
 //
-//  Created by 区振轩 on 2018/10/19.
+//  Created by 区振轩 on 2018/11/22.
 //  Copyright © 2018年 区振轩. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef Adaption_h
+#define Adaption_h
+
 #import <UIKit/UIKit.h>
-
-#define ScreenBoundsWidth (ScreenBounds.size.width<ScreenBounds.size.height?ScreenBounds.size.width:ScreenBounds.size.height)
-#define ScreenBoundsHeight (ScreenBounds.size.height>ScreenBounds.size.width?ScreenBounds.size.height:ScreenBounds.size.width)
-
-#define ScreenBounds [UIScreen mainScreen].bounds
-#define ScreenScale ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?ScreenBoundsWidth/768.0 :ScreenBoundsWidth/414.0)
-#define ScreenScaleH ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?ScreenBoundsHeight/1024.0 :ScreenBoundsHeight/736.0)
-
-#define iPhoneX (ScreenBoundsWidth == 375.f && ScreenBoundsHeight == 812.f)
-
-//宏定义常用的导航栏，tabbar，状态栏高度
-#define TabBarH ((kheight == 812) ? 83 : 49)
-#define NavH ((kheight == 812) ? 88 : 64)//这个包含状态栏在内
-#define StuBarH ((kheight == 812) ? 44 : 20)
-
 
 #pragma 屏幕尺寸
 
@@ -31,8 +18,8 @@
 
 #pragma UI设计图尺寸
 
-#define kBaseWidth 375
-#define kBaseHeight 667
+#define kBaseWidth 750
+#define kBaseHeight 1334
 //宏定义内联函数
 #define Inline static inline
 #pragma mark --设置比例
@@ -74,6 +61,8 @@ Inline CGRect AAdaptionRectFromFrame(CGRect frame){
     return CGRectMake(newX, newY, newW, newH);
 }
 
+
+
 //字体适配：传出设计图字体大小
 Inline UIFont * AAFont(CGFloat font){
     return [UIFont systemFontOfSize:font*AAdaptionWidth()];
@@ -83,6 +72,4 @@ Inline UIFont * BoldFont(CGFloat font){
     return [UIFont boldSystemFontOfSize:font*AAdaptionWidth()];
 }
 
-
-extern NSString* const ShareSDKAppID;
-extern NSString* const ShareSDKAppSecret;
+#endif /* Adaption_h */

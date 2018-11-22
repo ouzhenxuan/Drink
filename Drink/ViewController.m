@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <Masonry.h>
+#import "UIView+ZXCornerRadius.h"
 
 @interface ViewController ()
 
@@ -18,7 +20,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    UIButton * recordBtn = [[UIButton alloc] init];
+    [self.view addSubview:recordBtn];
     
+    [recordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.height.mas_equalTo(AAdaption(106));
+        make.width.mas_equalTo(AAdaption(106));
+    }];
+    recordBtn.backgroundColor = [UIColor redColor];
+    [recordBtn setTitle:@"喝水" forState:UIControlStateNormal];
+    [recordBtn setCornerRadius:AAdaption(106/2.0)];
+
     
     
 }
