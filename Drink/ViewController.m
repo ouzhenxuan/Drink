@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import <Masonry.h>
 #import "UIView+ZXCornerRadius.h"
+#import "ZXChooseBtn.h"
+#import "DCPathButton.h"
+#import "GWRoundView.h"
 
-@interface ViewController ()
+@interface ViewController () <ChooseRoundViewDelegate>
 
 @end
 
@@ -18,22 +21,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    UIButton * recordBtn = [[UIButton alloc] init];
-    [self.view addSubview:recordBtn];
-    
-    [recordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.height.mas_equalTo(AAdaption(106));
-        make.width.mas_equalTo(AAdaption(106));
-    }];
-    recordBtn.backgroundColor = [UIColor redColor];
-    [recordBtn setTitle:@"喝水" forState:UIControlStateNormal];
-    [recordBtn setCornerRadius:AAdaption(106/2.0)];
+    [self setGWRoundButtonView];
+}
 
+//添加自定义视图
+-(void)setGWRoundButtonView{
     
-    
+    GWRoundView *roundView = [[GWRoundView alloc] init];
+    [self.view addSubview:roundView];
+    [roundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view.mas_bottom).mas_offset(-100);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.height.mas_equalTo(AAdaption(300));
+        make.width.mas_equalTo(AAdaption(300));
+    }];
+    roundView.backgroundColor = [UIColor greenColor];
+    roundView.delegate = self;
+}
+
+- (void)returnNumber:(int)num{
+    NSLog(@"num: %d",num);
 }
 
 

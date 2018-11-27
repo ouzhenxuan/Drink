@@ -43,6 +43,16 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>The DCPathButton use the MIT license</string>
+			<key>License</key>
+			<string>MIT</string>
+			<key>Title</key>
+			<string>DCPathButton</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright (c) 2013-2015 MJExtension (https://github.com/CoderMJLee/MJExtension)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

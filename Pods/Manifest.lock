@@ -14,25 +14,29 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - DCPathButton (2.1.4)
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
 
 DEPENDENCIES:
   - AFNetworking
+  - DCPathButton
   - Masonry
   - MJExtension
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - DCPathButton
     - Masonry
     - MJExtension
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  DCPathButton: 99c8211ef3eafc3b438c917a4c7b4502fa77eee7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
 
-PODFILE CHECKSUM: 3477288ce1a3f113e7ef482f4433b726120bc8eb
+PODFILE CHECKSUM: ab08a5611478af45427734c43b610e2fc30f3d4e
 
 COCOAPODS: 1.5.3

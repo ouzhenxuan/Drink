@@ -24,6 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## DCPathButton
+
+The DCPathButton use the MIT license
+
 ## MJExtension
 
 Copyright (c) 2013-2015 MJExtension (https://github.com/CoderMJLee/MJExtension)

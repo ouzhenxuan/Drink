@@ -36,13 +36,13 @@
     
     [self layoutIfNeeded];//这句代码很重要，不能忘了
     
-//    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(value, value)];
     UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:value];
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = self.bounds;
     shapeLayer.path = path.CGPath;
-    self.layer.mask = shapeLayer;
-    
+    [self.layer setMask:shapeLayer];
+//    self.layer.masksToBounds = true;
+//    self.userInteractionEnabled = YES;
 }
 
 
