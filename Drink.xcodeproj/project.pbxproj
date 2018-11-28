@@ -17,8 +17,10 @@
 		F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A42E2179779E009CFBC7 /* ZXConstants.m */; };
 		F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */; };
 		F5D87F9621AC08CD006E82F7 /* ZXChooseBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9521AC08CD006E82F7 /* ZXChooseBtn.m */; };
-		F5D87F9E21AD2B39006E82F7 /* GWRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9C21AD2B38006E82F7 /* GWRoundView.m */; };
 		F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FA021AD3134006E82F7 /* UIImage+ZXImageWithColor.m */; };
+		F5D87FB221AE119D006E82F7 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAB21AE119D006E82F7 /* WeakProxy.m */; };
+		F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAE21AE119D006E82F7 /* JYWaveView.m */; };
+		F5D87FB421AE119D006E82F7 /* GWRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FB021AE119D006E82F7 /* GWRoundView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +44,14 @@
 		F5D87F9321A6C56B006E82F7 /* Adaption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adaption.h; sourceTree = "<group>"; };
 		F5D87F9421AC08CD006E82F7 /* ZXChooseBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXChooseBtn.h; sourceTree = "<group>"; };
 		F5D87F9521AC08CD006E82F7 /* ZXChooseBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXChooseBtn.m; sourceTree = "<group>"; };
-		F5D87F9C21AD2B38006E82F7 /* GWRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWRoundView.m; sourceTree = "<group>"; };
-		F5D87F9D21AD2B38006E82F7 /* GWRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWRoundView.h; sourceTree = "<group>"; };
 		F5D87F9F21AD3134006E82F7 /* UIImage+ZXImageWithColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZXImageWithColor.h"; sourceTree = "<group>"; };
 		F5D87FA021AD3134006E82F7 /* UIImage+ZXImageWithColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZXImageWithColor.m"; sourceTree = "<group>"; };
+		F5D87FAB21AE119D006E82F7 /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
+		F5D87FAC21AE119D006E82F7 /* JYWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYWaveView.h; sourceTree = "<group>"; };
+		F5D87FAD21AE119D006E82F7 /* WeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
+		F5D87FAE21AE119D006E82F7 /* JYWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWaveView.m; sourceTree = "<group>"; };
+		F5D87FB021AE119D006E82F7 /* GWRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWRoundView.m; sourceTree = "<group>"; };
+		F5D87FB121AE119D006E82F7 /* GWRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWRoundView.h; sourceTree = "<group>"; };
 		FDBB06E9893B7E5AC0126F00 /* Pods-Drink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Drink/Pods-Drink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,8 +125,8 @@
 		F590A42C217976E7009CFBC7 /* ZXTool */ = {
 			isa = PBXGroup;
 			children = (
+				F5D87FA921AE119D006E82F7 /* ThirdParty */,
 				F5D87F8F21A6C34D006E82F7 /* Category */,
-				F5D87F9B21AD2B38006E82F7 /* View */,
 				F590A42D2179779E009CFBC7 /* ZXConstants.h */,
 				F590A42E2179779E009CFBC7 /* ZXConstants.m */,
 				F5D87F9321A6C56B006E82F7 /* Adaption.h */,
@@ -139,13 +145,34 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		F5D87F9B21AD2B38006E82F7 /* View */ = {
+		F5D87FA921AE119D006E82F7 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				F5D87F9D21AD2B38006E82F7 /* GWRoundView.h */,
-				F5D87F9C21AD2B38006E82F7 /* GWRoundView.m */,
+				F5D87FAA21AE119D006E82F7 /* JYWaveView */,
+				F5D87FAF21AE119D006E82F7 /* ChooseView */,
 			);
-			path = View;
+			name = ThirdParty;
+			path = Drink/ThirdParty;
+			sourceTree = SOURCE_ROOT;
+		};
+		F5D87FAA21AE119D006E82F7 /* JYWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				F5D87FAD21AE119D006E82F7 /* WeakProxy.h */,
+				F5D87FAB21AE119D006E82F7 /* WeakProxy.m */,
+				F5D87FAC21AE119D006E82F7 /* JYWaveView.h */,
+				F5D87FAE21AE119D006E82F7 /* JYWaveView.m */,
+			);
+			path = JYWaveView;
+			sourceTree = "<group>";
+		};
+		F5D87FAF21AE119D006E82F7 /* ChooseView */ = {
+			isa = PBXGroup;
+			children = (
+				F5D87FB021AE119D006E82F7 /* GWRoundView.m */,
+				F5D87FB121AE119D006E82F7 /* GWRoundView.h */,
+			);
+			path = ChooseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,14 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D87FB221AE119D006E82F7 /* WeakProxy.m in Sources */,
+				F5D87FB421AE119D006E82F7 /* GWRoundView.m in Sources */,
 				F590A41A2178A584009CFBC7 /* ViewController.m in Sources */,
 				F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */,
-				F5D87F9E21AD2B39006E82F7 /* GWRoundView.m in Sources */,
 				F590A4252178A585009CFBC7 /* main.m in Sources */,
 				F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */,
 				F5D87F9621AC08CD006E82F7 /* ZXChooseBtn.m in Sources */,
 				F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */,
 				F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */,
+				F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

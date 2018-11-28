@@ -126,7 +126,6 @@
                     btn.alpha = 0;
                 }
             }];
-            //[self startTimer];
         }
         isCenterBtnSelected = !isCenterBtnSelected;
     }else if (button.tag>=100&&button.tag<107){
