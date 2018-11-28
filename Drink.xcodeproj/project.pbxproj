@@ -16,7 +16,6 @@
 		F590A4252178A585009CFBC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A4242178A585009CFBC7 /* main.m */; };
 		F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A42E2179779E009CFBC7 /* ZXConstants.m */; };
 		F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */; };
-		F5D87F9621AC08CD006E82F7 /* ZXChooseBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9521AC08CD006E82F7 /* ZXChooseBtn.m */; };
 		F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FA021AD3134006E82F7 /* UIImage+ZXImageWithColor.m */; };
 		F5D87FB221AE119D006E82F7 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAB21AE119D006E82F7 /* WeakProxy.m */; };
 		F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAE21AE119D006E82F7 /* JYWaveView.m */; };
@@ -42,8 +41,6 @@
 		F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZXCornerRadius.m"; sourceTree = "<group>"; };
 		F5D87F9121A6C34D006E82F7 /* UIView+ZXCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZXCornerRadius.h"; sourceTree = "<group>"; };
 		F5D87F9321A6C56B006E82F7 /* Adaption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adaption.h; sourceTree = "<group>"; };
-		F5D87F9421AC08CD006E82F7 /* ZXChooseBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXChooseBtn.h; sourceTree = "<group>"; };
-		F5D87F9521AC08CD006E82F7 /* ZXChooseBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXChooseBtn.m; sourceTree = "<group>"; };
 		F5D87F9F21AD3134006E82F7 /* UIImage+ZXImageWithColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZXImageWithColor.h"; sourceTree = "<group>"; };
 		F5D87FA021AD3134006E82F7 /* UIImage+ZXImageWithColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZXImageWithColor.m"; sourceTree = "<group>"; };
 		F5D87FAB21AE119D006E82F7 /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 				F590A4232178A585009CFBC7 /* Info.plist */,
 				F590A4242178A585009CFBC7 /* main.m */,
 				F590A42B217976B7009CFBC7 /* Drink-Prefix.pch */,
-				F5D87F9421AC08CD006E82F7 /* ZXChooseBtn.h */,
-				F5D87F9521AC08CD006E82F7 /* ZXChooseBtn.m */,
 			);
 			path = Drink;
 			sourceTree = "<group>";
@@ -186,7 +181,6 @@
 				F590A40E2178A584009CFBC7 /* Sources */,
 				F590A40F2178A584009CFBC7 /* Frameworks */,
 				F590A4102178A584009CFBC7 /* Resources */,
-				209F98D91988334B4FC3A2FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,28 +238,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		209F98D91988334B4FC3A2FF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Drink/Pods-Drink-resources.sh",
-				"${PODS_ROOT}/DCPathButton/DCPathButton/Sounds/bloom.caf",
-				"${PODS_ROOT}/DCPathButton/DCPathButton/Sounds/fold.caf",
-				"${PODS_ROOT}/DCPathButton/DCPathButton/Sounds/selected.caf",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bloom.caf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fold.caf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/selected.caf",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Drink/Pods-Drink-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		430153CBBBB759DB38593231 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,7 +269,6 @@
 				F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */,
 				F590A4252178A585009CFBC7 /* main.m in Sources */,
 				F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */,
-				F5D87F9621AC08CD006E82F7 /* ZXChooseBtn.m in Sources */,
 				F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */,
 				F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */,
 				F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */,

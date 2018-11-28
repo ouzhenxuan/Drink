@@ -4,7 +4,6 @@ target 'Drink' do
 pod 'AFNetworking'
 pod 'MJExtension' 
 pod 'Masonry'
-pod 'DCPathButton'
 
 end
 
