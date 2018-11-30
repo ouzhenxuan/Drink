@@ -38,8 +38,7 @@
 }
 
 -(void)setRoundButton{
-    UIImage * normalImage  = [UIImage imageWithColor:[UIColor blueColor]];
-    UIImage * selectImage  = [UIImage imageWithColor:[UIColor redColor]];
+    UIImage * normalImage  = [UIImage imageWithColor:[UIColor colorWithRed:52.0/256.0 green:128/256.0 blue:249/256.0 alpha:1]];
     
     _circleNumber = 5;
     self.R = 90; //中心圆和周围圆的圆心距
@@ -55,11 +54,8 @@
     _centenButton = [[UIButton alloc] init];
     _centenButton.tag = 300;
     _centenButton.backgroundColor = [UIColor blueColor];
-    
-    
-    [_centenButton setTitle:@"世界" forState:UIControlStateNormal];
-    [_centenButton setBackgroundImage:[UIImage imageNamed:@"earth"] forState:UIControlStateNormal];
-//    self.btnCenter = _centenButton.center;
+    [_centenButton setTitle:@"添加" forState:UIControlStateNormal];
+    [_centenButton setBackgroundImage:normalImage forState:UIControlStateNormal];
     [_centenButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_centenButton];
     [_centenButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,10 +65,9 @@
     }];
     [_centenButton setCornerRadius:40];
     
-    NSArray *array = @[@"亚洲",@"欧洲",@"北美",@"南美",@"大洋",@"非洲",@"南极"];
+    NSArray *array = @[@"自定义",@"150ml",@"250ml",@"300ml",@"500ml",@"750ml"];
     _btnArray = [NSMutableArray array];
     for (int i=0; i<_circleNumber; i++) {
-//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         UIButton *btn = [[UIButton alloc] init];
         btn.frame = CGRectMake(0, 0, 2*r, 2*r);
         btn.center = _centenButton.center;
@@ -80,10 +75,9 @@
         btn.alpha = 0;
         btn.layer.cornerRadius = r;
         [btn setTitle:array[i] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn setCornerRadius:r];
         [btn setBackgroundImage:normalImage forState:UIControlStateNormal];
-        [btn setBackgroundImage:selectImage forState:UIControlStateHighlighted];
         [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         [_btnArray addObject:btn];

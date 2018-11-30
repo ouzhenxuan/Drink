@@ -164,8 +164,8 @@
 		F5D87FAF21AE119D006E82F7 /* ChooseView */ = {
 			isa = PBXGroup;
 			children = (
-				F5D87FB021AE119D006E82F7 /* GWRoundView.m */,
 				F5D87FB121AE119D006E82F7 /* GWRoundView.h */,
+				F5D87FB021AE119D006E82F7 /* GWRoundView.m */,
 			);
 			path = ChooseView;
 			sourceTree = "<group>";
