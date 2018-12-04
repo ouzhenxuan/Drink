@@ -28,6 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
     
     [self initTheDesiredValueFromDb];
     
@@ -35,6 +37,9 @@
     
     [self setGWRoundButtonView];
     
+    [self.view layoutIfNeeded];
+    
+    [self readTheUserValue];
 }
 
 //从数据库中加载目标值
@@ -72,7 +77,6 @@
     self.bottonSeaView = seaView;
     [self.view addSubview:self.bottonSeaView];
     
-    __weak typeof(self) weakSelf = self;
     [_waveView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom).mas_offset(-(margin - waveHeight));
         make.centerX.equalTo(self.view.mas_centerX);
@@ -111,10 +115,11 @@
         default:
             break;
     }
+    [self setTheUserValue];
     [self changeTheBackgroundHeight];
 }
 
-//todo:喝水总量/目标喝水量 的计算
+//喝水总量/目标喝水量 的计算
 - (void)changeTheBackgroundHeight{
     CGFloat scale = _totalWater / 1.0 / desiredValue;
     scale = scale >=1 ? 1 : scale;
@@ -129,10 +134,22 @@
     [self.waveView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom).mas_offset(-(offsetHeight - waveHeight));
     }];
-    [UIView animateWithDuration:3 animations:^{
+    [UIView animateWithDuration:1 animations:^{
             [self.view layoutIfNeeded];
     }];
-    
+}
+
+- (void)readTheUserValue{
+    _totalWater = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] intValue];
+    desiredValue = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] intValue];
+    if (desiredValue == 0) {
+        desiredValue = 2000;
+    }
+    [self changeTheBackgroundHeight];
+}
+
+- (void)setTheUserValue{
+    [[NSUserDefaults standardUserDefaults] setValue:@(_totalWater) forKey:@"TotalWater"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -113,18 +113,23 @@
             }];
             
         }else{
-            [UIView animateWithDuration:0.3 animations:^{
-                for (int i=0; i<self->_circleNumber; i++) {
-                    UIButton *btn = (UIButton *)[self viewWithTag:i+100];
-                    btn.center = self.btnCenter;
-                    btn.alpha = 0;
-                }
-            }];
+            [self dismissTheBt];
         }
-        isCenterBtnSelected = !isCenterBtnSelected;
     }else if (button.tag>=100&&button.tag<107){
         [self selectDataWithNumber:button.tag-100.0];
+        [self dismissTheBt];
     }
+    isCenterBtnSelected = !isCenterBtnSelected;
+}
+
+- (void)dismissTheBt{
+    [UIView animateWithDuration:0.3 animations:^{
+        for (int i=0; i<self->_circleNumber; i++) {
+            UIButton *btn = (UIButton *)[self viewWithTag:i+100];
+            btn.center = self.btnCenter;
+            btn.alpha = 0;
+        }
+    }];
 }
 
 //根据点击按钮的不同，进行不同的操作
