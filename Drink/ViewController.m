@@ -28,28 +28,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    
-    [self initTheDesiredValueFromDb];
     
     [self setWaveView];
     
     [self setGWRoundButtonView];
+    
+    [self setupTheTitle];
     
     [self.view layoutIfNeeded];
     
     [self readTheUserValue];
 }
 
-//从数据库中加载目标值
-- (void)initTheDesiredValueFromDb{
-    desiredValue = 2000;
+- (void)setupTheTitle{
+    UILabel * tipLabel = [[UILabel alloc] init];
+    [self.view addSubview:tipLabel];
+    [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.bottom.equalTo(self.view.mas_bottom).mas_offset(-(100 + AAdaption(300 + 100)));
+    }];
+    [tipLabel setText:@"多多喝水，有益于身体健康"];
+    [tipLabel setFont:AAFont(20)];
+    [tipLabel setTextColor: [UIColor blackColor]];
 }
 
 //添加自定义视图
 -(void)setGWRoundButtonView{
-    
     GWRoundView *roundView = [[GWRoundView alloc] init];
     [self.view addSubview:roundView];
     [roundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -139,6 +143,7 @@
     }];
 }
 
+//从数据库中加载目标值
 - (void)readTheUserValue{
     _totalWater = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] intValue];
     desiredValue = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] intValue];
