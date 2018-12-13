@@ -11,7 +11,7 @@
 #import "UIView+ZXCornerRadius.h"
 #import "GWRoundView.h"
 #import "JYWaveView.h"
-
+#import "ZXUserValueModel.h"
 #define waveHeight 6
 
 @interface ViewController () <ChooseRoundViewDelegate>
@@ -19,9 +19,11 @@
     int desiredValue;
 }
 
-@property (nonatomic,assign) int totalWater;
+@property (nonatomic,assign) NSInteger totalWater;
 @property (nonatomic,weak) UIView * bottonSeaView;
 @property (nonatomic,strong) JYWaveView *waveView;
+@property (nonatomic,weak) UILabel * waterValueLabel;
+
 @end
 
 @implementation ViewController
@@ -50,6 +52,18 @@
     [tipLabel setText:@"多多喝水，有益于身体健康"];
     [tipLabel setFont:AAFont(20)];
     [tipLabel setTextColor: [UIColor blackColor]];
+    
+    UILabel * waterlabel =  [[UILabel alloc] init];
+    _waterValueLabel = waterlabel;
+    [self.view addSubview:_waterValueLabel];
+    [waterlabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.bottom.equalTo(self.view.mas_bottom).mas_offset(-(100 + AAdaption(300 + 60)));
+    }];
+    [waterlabel setFont:AAFont(20)];
+    [waterlabel setTextColor: [UIColor blackColor]];
+    
+    
 }
 
 //添加自定义视图
@@ -141,12 +155,19 @@
     [UIView animateWithDuration:1 animations:^{
             [self.view layoutIfNeeded];
     }];
+    [_waterValueLabel setText:[NSString stringWithFormat:@"%ld ml",_totalWater]];
 }
 
 //从数据库中加载目标值
 - (void)readTheUserValue{
-    _totalWater = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] intValue];
-    desiredValue = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] intValue];
+    NSData * data = [[NSUserDefaults standardUserDefaults] objectForKey:@"TotalWater"] ;
+    
+    ZXUserValueModel *  model = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (model.lastModifyDate && [self pleaseInsertStarTime:model.lastModifyDate andInsertEndTime:[NSDate new]]<1) {
+        _totalWater = model.waterValue;
+    }
+    
+    desiredValue = [[[NSUserDefaults standardUserDefaults] objectForKey:@"DesiredValue"] intValue];
     if (desiredValue == 0) {
         desiredValue = 2000;
     }
@@ -154,7 +175,12 @@
 }
 
 - (void)setTheUserValue{
-    [[NSUserDefaults standardUserDefaults] setValue:@(_totalWater) forKey:@"TotalWater"];
+    ZXUserValueModel * model = [[ZXUserValueModel alloc] init];
+    model.waterValue = _totalWater;
+    model.lastModifyDate = [NSDate date];
+    model.userName = @"";
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model];
+    [[NSUserDefaults standardUserDefaults] setValue:data forKey:@"TotalWater"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -162,5 +188,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSTimeInterval)pleaseInsertStarTime:(NSDate *)starTime andInsertEndTime:(NSDate *)endTime{
+    NSDate *date1 = [NSDate date];
+    NSTimeZone *zone1 = [NSTimeZone systemTimeZone];
+    NSInteger interval1 = [zone1 secondsFromGMTForDate:date1];
+    NSDate *localDate1 = [date1 dateByAddingTimeInterval:interval1];
+    
+    // 时间2
+    NSDate *date2 = [NSDate date];
+    NSTimeZone *zone2 = [NSTimeZone systemTimeZone];
+    NSInteger interval2 = [zone2 secondsFromGMTForDate:date2];
+    NSDate *localDate2 = [date2 dateByAddingTimeInterval:interval2];
+    
+    // 时间2与时间1之间的时间差（秒）
+    double dayTime = [localDate2 timeIntervalSinceReferenceDate]/60/60/24 - [localDate1 timeIntervalSinceReferenceDate]/60/60/24;
+    return dayTime;
+}
 
 @end
