@@ -189,13 +189,13 @@
 }
 
 - (NSTimeInterval)pleaseInsertStarTime:(NSDate *)starTime andInsertEndTime:(NSDate *)endTime{
-    NSDate *date1 = [NSDate date];
+    NSDate *date1 = starTime;
     NSTimeZone *zone1 = [NSTimeZone systemTimeZone];
     NSInteger interval1 = [zone1 secondsFromGMTForDate:date1];
     NSDate *localDate1 = [date1 dateByAddingTimeInterval:interval1];
     
     // 时间2
-    NSDate *date2 = [NSDate date];
+    NSDate *date2 = endTime;
     NSTimeZone *zone2 = [NSTimeZone systemTimeZone];
     NSInteger interval2 = [zone2 secondsFromGMTForDate:date2];
     NSDate *localDate2 = [date2 dateByAddingTimeInterval:interval2];
