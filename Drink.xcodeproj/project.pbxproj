@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		840FC3F2720C90F22C1BCF81 /* libPods-Drink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAE4BA884936FD0B6F2794B /* libPods-Drink.a */; };
 		F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A4162178A584009CFBC7 /* AppDelegate.m */; };
-		F590A41A2178A584009CFBC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A4192178A584009CFBC7 /* ViewController.m */; };
+		F590A41A2178A584009CFBC7 /* ZXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A4192178A584009CFBC7 /* ZXHomeViewController.m */; };
 		F590A41D2178A584009CFBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F590A41B2178A584009CFBC7 /* Main.storyboard */; };
 		F590A41F2178A585009CFBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F590A41E2178A585009CFBC7 /* Assets.xcassets */; };
 		F590A4222178A585009CFBC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F590A4202178A585009CFBC7 /* LaunchScreen.storyboard */; };
 		F590A4252178A585009CFBC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A4242178A585009CFBC7 /* main.m */; };
 		F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F590A42E2179779E009CFBC7 /* ZXConstants.m */; };
+		F59AB71521D062F300D98D78 /* ZXTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59AB71321D062F300D98D78 /* ZXTipViewController.m */; };
+		F59AB71621D062F300D98D78 /* ZXTipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59AB71421D062F300D98D78 /* ZXTipViewController.xib */; };
+		F59AB71A21D4E85F00D98D78 /* ZXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59AB71921D4E85F00D98D78 /* ZXTabBarController.m */; };
+		F59AB71D21D4E8F200D98D78 /* ZXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59AB71C21D4E8F200D98D78 /* ZXNavigationController.m */; };
 		F5AE213121C2782F0087A206 /* ZXUserValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AE213021C2782F0087A206 /* ZXUserValueModel.m */; };
 		F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */; };
 		F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FA021AD3134006E82F7 /* UIImage+ZXImageWithColor.m */; };
@@ -29,8 +33,8 @@
 		F590A4122178A584009CFBC7 /* Drink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F590A4152178A584009CFBC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F590A4162178A584009CFBC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F590A4182178A584009CFBC7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F590A4192178A584009CFBC7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F590A4182178A584009CFBC7 /* ZXHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXHomeViewController.h; sourceTree = "<group>"; };
+		F590A4192178A584009CFBC7 /* ZXHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXHomeViewController.m; sourceTree = "<group>"; };
 		F590A41C2178A584009CFBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F590A41E2178A585009CFBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F590A4212178A585009CFBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,13 @@
 		F590A42B217976B7009CFBC7 /* Drink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drink-Prefix.pch"; sourceTree = "<group>"; };
 		F590A42D2179779E009CFBC7 /* ZXConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXConstants.h; sourceTree = "<group>"; };
 		F590A42E2179779E009CFBC7 /* ZXConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXConstants.m; sourceTree = "<group>"; };
+		F59AB71221D062F300D98D78 /* ZXTipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXTipViewController.h; sourceTree = "<group>"; };
+		F59AB71321D062F300D98D78 /* ZXTipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXTipViewController.m; sourceTree = "<group>"; };
+		F59AB71421D062F300D98D78 /* ZXTipViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTipViewController.xib; sourceTree = "<group>"; };
+		F59AB71821D4E85F00D98D78 /* ZXTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXTabBarController.h; sourceTree = "<group>"; };
+		F59AB71921D4E85F00D98D78 /* ZXTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXTabBarController.m; sourceTree = "<group>"; };
+		F59AB71B21D4E8F200D98D78 /* ZXNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXNavigationController.h; sourceTree = "<group>"; };
+		F59AB71C21D4E8F200D98D78 /* ZXNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXNavigationController.m; sourceTree = "<group>"; };
 		F5AE212F21C2782F0087A206 /* ZXUserValueModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXUserValueModel.h; sourceTree = "<group>"; };
 		F5AE213021C2782F0087A206 /* ZXUserValueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXUserValueModel.m; sourceTree = "<group>"; };
 		F5D87F9021A6C34D006E82F7 /* UIView+ZXCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZXCornerRadius.m"; sourceTree = "<group>"; };
@@ -105,12 +116,12 @@
 		F590A4142178A584009CFBC7 /* Drink */ = {
 			isa = PBXGroup;
 			children = (
+				F59AB71721D4E80300D98D78 /* Base */,
+				F59AB71121D0626D00D98D78 /* Controller */,
 				F5AE213221C278380087A206 /* model */,
 				F590A42C217976E7009CFBC7 /* ZXTool */,
 				F590A4152178A584009CFBC7 /* AppDelegate.h */,
 				F590A4162178A584009CFBC7 /* AppDelegate.m */,
-				F590A4182178A584009CFBC7 /* ViewController.h */,
-				F590A4192178A584009CFBC7 /* ViewController.m */,
 				F590A41B2178A584009CFBC7 /* Main.storyboard */,
 				F590A41E2178A585009CFBC7 /* Assets.xcassets */,
 				F590A4202178A585009CFBC7 /* LaunchScreen.storyboard */,
@@ -131,6 +142,29 @@
 				F5D87F9321A6C56B006E82F7 /* Adaption.h */,
 			);
 			path = ZXTool;
+			sourceTree = "<group>";
+		};
+		F59AB71121D0626D00D98D78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F590A4182178A584009CFBC7 /* ZXHomeViewController.h */,
+				F590A4192178A584009CFBC7 /* ZXHomeViewController.m */,
+				F59AB71221D062F300D98D78 /* ZXTipViewController.h */,
+				F59AB71321D062F300D98D78 /* ZXTipViewController.m */,
+				F59AB71421D062F300D98D78 /* ZXTipViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F59AB71721D4E80300D98D78 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F59AB71821D4E85F00D98D78 /* ZXTabBarController.h */,
+				F59AB71921D4E85F00D98D78 /* ZXTabBarController.m */,
+				F59AB71B21D4E8F200D98D78 /* ZXNavigationController.h */,
+				F59AB71C21D4E8F200D98D78 /* ZXNavigationController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		F5AE213221C278380087A206 /* model */ = {
@@ -244,6 +278,7 @@
 			files = (
 				F590A4222178A585009CFBC7 /* LaunchScreen.storyboard in Resources */,
 				F590A41F2178A585009CFBC7 /* Assets.xcassets in Resources */,
+				F59AB71621D062F300D98D78 /* ZXTipViewController.xib in Resources */,
 				F590A41D2178A584009CFBC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,13 +313,16 @@
 			files = (
 				F5AE213121C2782F0087A206 /* ZXUserValueModel.m in Sources */,
 				F5D87FB221AE119D006E82F7 /* WeakProxy.m in Sources */,
+				F59AB71D21D4E8F200D98D78 /* ZXNavigationController.m in Sources */,
 				F5D87FB421AE119D006E82F7 /* GWRoundView.m in Sources */,
-				F590A41A2178A584009CFBC7 /* ViewController.m in Sources */,
+				F590A41A2178A584009CFBC7 /* ZXHomeViewController.m in Sources */,
 				F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */,
 				F590A4252178A585009CFBC7 /* main.m in Sources */,
 				F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */,
 				F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */,
 				F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */,
+				F59AB71A21D4E85F00D98D78 /* ZXTabBarController.m in Sources */,
+				F59AB71521D062F300D98D78 /* ZXTipViewController.m in Sources */,
 				F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

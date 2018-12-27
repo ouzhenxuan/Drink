@@ -6,15 +6,16 @@
 //  Copyright © 2018年 区振轩. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ZXHomeViewController.h"
 #import <Masonry.h>
 #import "UIView+ZXCornerRadius.h"
 #import "GWRoundView.h"
 #import "JYWaveView.h"
 #import "ZXUserValueModel.h"
 #define waveHeight 6
+#define viewHeight ScreenBoundsHeight-TabBarH
 
-@interface ViewController () <ChooseRoundViewDelegate>
+@interface ZXHomeViewController () <ChooseRoundViewDelegate>
 {
     int desiredValue;
 }
@@ -26,10 +27,12 @@
 
 @end
 
-@implementation ViewController
+@implementation ZXHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self setWaveView];
     
@@ -62,8 +65,6 @@
     }];
     [waterlabel setFont:AAFont(20)];
     [waterlabel setTextColor: [UIColor blackColor]];
-    
-    
 }
 
 //添加自定义视图
@@ -82,7 +83,7 @@
 - (void)setWaveView{
     CGFloat margin = AAdaption(100);
     
-    JYWaveView *waveView = [[JYWaveView alloc] initWithFrame:CGRectMake(0, ScreenBoundsHeight - margin, ScreenBoundsWidth,waveHeight)];
+    JYWaveView *waveView = [[JYWaveView alloc] initWithFrame:CGRectMake(0, viewHeight - margin, ScreenBoundsWidth,waveHeight)];
     waveView.frontSpeed = -0.08;
     waveView.insideSpeed = 0.08;
     waveView.frontColor = [UIColor colorWithRed:32.0/256.0 green:183/256.0 blue:223/256.0 alpha:0.6];
@@ -90,7 +91,7 @@
     _waveView = waveView;
     [self.view addSubview:_waveView];
     
-    UIView * seaView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenBoundsHeight - (margin - waveHeight) , ScreenBoundsWidth, margin - waveHeight)];
+    UIView * seaView = [[UIView alloc] initWithFrame:CGRectMake(0, viewHeight - (margin - waveHeight) , ScreenBoundsWidth, margin - waveHeight)];
     [seaView setBackgroundColor:[UIColor colorWithRed:32.0/256.0 green:183/256.0 blue:223/256.0 alpha:1]];
     self.bottonSeaView = seaView;
     [self.view addSubview:self.bottonSeaView];
@@ -111,7 +112,6 @@
 }
 
 - (void)returnNumber:(int)num{
-//    NSLog(@"num: %d",num);
     switch (num) {
         case 0:
             
@@ -141,7 +141,7 @@
 - (void)changeTheBackgroundHeight{
     CGFloat scale = _totalWater / 1.0 / desiredValue;
     scale = scale >=1 ? 1 : scale;
-    CGFloat mutableHeight = ScreenBoundsHeight - AAdaption(100 + 88);
+    CGFloat mutableHeight = viewHeight - AAdaption(100 + 88);
     CGFloat offsetHeight = mutableHeight * scale + AAdaption(100);
     
     [self.view setNeedsUpdateConstraints];
