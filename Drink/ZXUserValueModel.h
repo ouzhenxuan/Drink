@@ -13,5 +13,7 @@
 @property (nonatomic,strong) NSDate * lastModifyDate;
 @property (nonatomic,assign) NSInteger waterValue;
 @property (nonatomic,copy) NSString * userName;
+@property (nonatomic,copy) NSString * userId;
+@property (nonatomic,strong) NSDate * createDate;
 @end
 

@@ -15,16 +15,18 @@
 - (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
     [aCoder encodeObject:_userName forKey:@"userName"];
     [aCoder encodeInteger:_waterValue forKey:@"waterValue"];
-//    [aCoder encodeDouble:_lastModifyDate forKey:@"lastModifyDate"];
+    [aCoder encodeObject:_userId forKey:@"userId"];
+    [aCoder encodeObject:_createDate forKey:@"createDate"];
     [aCoder encodeObject:_lastModifyDate forKey:@"lastModifyDate"];
 }
 
 - (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
     if (self = [super init]) {
         _userName = [aDecoder decodeObjectForKey:@"userName"];
+        _userId = [aDecoder decodeObjectForKey:@"userId"];
         _waterValue = [aDecoder decodeIntegerForKey:@"waterValue"];
         _lastModifyDate = [aDecoder decodeObjectForKey:@"lastModifyDate"];
-//        _lastModifyDate = [aDecoder decodeDoubleForKey:@"lastModifyDate"];
+        _createDate = [aDecoder decodeObjectForKey:@"createDate"];
     }
     return self;
 }

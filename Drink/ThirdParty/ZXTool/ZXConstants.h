@@ -86,3 +86,6 @@ Inline UIFont * BoldFont(CGFloat font){
 
 extern NSString* const ShareSDKAppID;
 extern NSString* const ShareSDKAppSecret;
+
+extern NSString* const APPLICATION_USERNAME;
+extern NSString* const APPLICATION_UUID;

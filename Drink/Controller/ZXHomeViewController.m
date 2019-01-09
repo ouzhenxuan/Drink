@@ -12,6 +12,7 @@
 #import "GWRoundView.h"
 #import "JYWaveView.h"
 #import "ZXUserValueModel.h"
+#import "ZXDrinkDatabaseTool.h"
 #define waveHeight 6
 #define viewHeight ScreenBoundsHeight-TabBarH
 
@@ -37,12 +38,15 @@
     [self setWaveView];
     
     [self setGWRoundButtonView];
-    
+     
     [self setupTheTitle];
     
     [self.view layoutIfNeeded];
     
     [self readTheUserValue];
+    
+    NSMutableArray * array = [ZXDrinkDatabaseTool allModelsWithUserId:APPLICATION_UUID];
+    NSLog(@"%@",array); 
 }
 
 - (void)setupTheTitle{
@@ -112,6 +116,7 @@
 }
 
 - (void)returnNumber:(int)num{
+    int waterValue = 0;
     switch (num) {
         case 0:
             
@@ -119,20 +124,29 @@
             break;
         case 1:
             //喝了150ml的水
-            _totalWater += 150;
+            waterValue = 150;
             break;
         case 2:
-            _totalWater += 250;
+            waterValue = 250;
             break;
         case 3:
-            _totalWater += 350;
+            waterValue = 350;
             break;
         case 4:
-            _totalWater += 500;
+            waterValue = 500;
             break;
         default:
             break;
     }
+    //将数据添加到数据库
+    ZXUserValueModel * model = [[ZXUserValueModel alloc] init];
+    model.userName = APPLICATION_USERNAME;
+    model.userId = APPLICATION_UUID;
+    model.waterValue = waterValue;
+    model.createDate = [NSDate date];
+    [ZXDrinkDatabaseTool addModel:model];
+    
+    _totalWater += 150;
     [self setTheUserValue];
     [self changeTheBackgroundHeight];
 }
