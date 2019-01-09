@@ -44,9 +44,6 @@
     [self.view layoutIfNeeded];
     
     [self readTheUserValue];
-    
-    NSMutableArray * array = [ZXDrinkDatabaseTool allModelsWithUserId:APPLICATION_UUID];
-    NSLog(@"%@",array); 
 }
 
 - (void)setupTheTitle{

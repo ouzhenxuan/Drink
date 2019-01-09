@@ -7,8 +7,11 @@
 //
 
 #import "ZXTipViewController.h"
+#import "ZXTipCell.h"
 
-@interface ZXTipViewController ()
+@interface ZXTipViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tipTableView;
 
 @end
 
@@ -16,17 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    _tipTableView.delegate = self;
+    _tipTableView.dataSource = self;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZXTipCell * cell = [tableView dequeueReusableCellWithIdentifier:@"myTipCell"];
+    if (cell == nil) {
+        cell = [ZXTipCell  xibTableViewZXTipCell];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.timeLabel.text = [NSString stringWithFormat:@"第 %ld 个", indexPath.row];
+    return cell;
+}
+
+
 
 @end
