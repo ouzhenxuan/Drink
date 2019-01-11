@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ZXTabBarController.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate ()
 
@@ -25,6 +26,8 @@
     [tabViewController initViewControllers];
     self.window.rootViewController = tabViewController;
     [self.window makeKeyAndVisible];
+    
+    [self registerAPN];
     
     return YES;
 }
@@ -56,5 +59,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// 注册通知
+- (void)registerAPN {
+    
+    if (@available(iOS 10.0, *)) { // iOS10 以上
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            
+        }];
+    } else {// iOS8.0 以上
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
+    }
+}
 
 @end
