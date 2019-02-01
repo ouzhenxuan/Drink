@@ -13,7 +13,7 @@
 
 + (instancetype)shareDatabase{
     static id _db = nil;
-    dispatch_once_t once ;
+    static dispatch_once_t once ;
     dispatch_once(&once, ^{
         NSString * tempPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"Drink"];
         if (![[NSFileManager defaultManager] createDirectoryAtPath:tempPath withIntermediateDirectories:YES attributes:nil error:nil]) {
@@ -22,6 +22,15 @@
         _db = [FMDatabase databaseWithPath:[tempPath stringByAppendingPathComponent:@"drink.sqlite"]];
     });
     return _db;
+    
+    
+//    static dispatch_once_t oneToken;
+    
+//    dispatch_once(&oneToken, ^{
+//        
+//        __onetimeClass = [[OneTimeClass alloc]init];
+//        
+//    });
 }
 
 @end

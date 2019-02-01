@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZXLocalPushHelper : NSObject
 
++ (void)addLocalNotice ;
+
++ (void)removeOneNotificationWithID:(NSString *)noticeId ;
+
++ (void)removeAllNotification ;
 @end
 
 NS_ASSUME_NONNULL_END

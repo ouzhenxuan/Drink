@@ -14,6 +14,8 @@
 #import "ZXUserValueModel.h"
 #import "ZXDrinkDatabaseTool.h"
 #import <UserNotifications/UserNotifications.h>
+#import "ZXLocalPushHelper.h"
+
 #define waveHeight 6
 #define viewHeight ScreenBoundsHeight-TabBarH
 
@@ -47,6 +49,16 @@
     [self readTheUserValue];
     
     [self checkUserNotificationEnable];
+    
+    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 40, 100, 50)];
+    [self.view addSubview:btn];
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn addTarget:self action:@selector(showPush:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+- (void)showPush:(UIButton *)btn{
+    [ZXLocalPushHelper addLocalNotice];
 }
 
 - (void)setupTheTitle{
@@ -119,7 +131,6 @@
     int waterValue = 0;
     switch (num) {
         case 0:
-            
             //弹出对话框输入饮水值
             break;
         case 1:
@@ -146,7 +157,7 @@
     model.createDate = [NSDate date];
     [ZXDrinkDatabaseTool addModel:model];
     
-    _totalWater += 150;
+    _totalWater += waterValue;
     [self setTheUserValue];
     [self changeTheBackgroundHeight];
 }
