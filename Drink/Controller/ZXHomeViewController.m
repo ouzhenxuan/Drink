@@ -35,30 +35,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
+//    波浪控件
     [self setWaveView];
-    
+//    添加喝水量的控件
     [self setGWRoundButtonView];
-     
+//    喝水总量的数字提示label和健康祝福语label
     [self setupTheTitle];
-    
+//    初始化布局，让前面添加的l控件有确定的frame
     [self.view layoutIfNeeded];
-    
+//    从数据库中读取用户数据
     [self readTheUserValue];
-    
+//    检查通知功能是否开启
     [self checkUserNotificationEnable];
-    
-    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 40, 100, 50)];
-    [self.view addSubview:btn];
-    [btn setBackgroundColor:[UIColor redColor]];
-    [btn addTarget:self action:@selector(showPush:) forControlEvents:UIControlEventTouchUpInside];
-    
-}
-
-- (void)showPush:(UIButton *)btn{
-    [ZXLocalPushHelper addLocalNotice];
 }
 
 - (void)setupTheTitle{
@@ -131,8 +120,9 @@
     int waterValue = 0;
     switch (num) {
         case 0:
-            //弹出对话框输入饮水值
-            break;
+        //弹出对话框输入饮水值
+            [self showAddWaterAlertView];
+            return;
         case 1:
             //喝了150ml的水
             waterValue = 150;
@@ -149,6 +139,10 @@
         default:
             break;
     }
+    [self addDataToDB:waterValue];
+}
+
+- (void)addDataToDB:(int)waterValue{
     //将数据添加到数据库
     ZXUserValueModel * model = [[ZXUserValueModel alloc] init];
     model.userName = APPLICATION_USERNAME;
@@ -160,6 +154,27 @@
     _totalWater += waterValue;
     [self setTheUserValue];
     [self changeTheBackgroundHeight];
+}
+
+- (void)showAddWaterAlertView{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"显示的标题" message:@"标题的提示信息" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击取消");
+    }]];
+    __block UITextField * text;
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        NSLog(@"添加一个textField就会调用 这个block");
+        text = textField;
+        [textField setKeyboardType:UIKeyboardTypeNumberPad];
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击确定");
+        NSLog(@"%@", text.text);
+        [self addDataToDB:text.text.intValue];
+    }]];
+    [self presentViewController:alertController animated:YES completion:^{
+        NSLog(@"completion");
+    }];
 }
 
 //喝水总量/目标喝水量 的计算
@@ -243,14 +258,14 @@
             }else {
                 isOn = NO;
                 NSLog(@"关闭了通知");
-                [self showAlertView];
+                [self showNotificationAlertView];
             }
         }];
         return isOn;
     }else {
         if ([[UIApplication sharedApplication] currentUserNotificationSettings].types == UIUserNotificationTypeNone){
             NSLog(@"关闭了通知");
-            [self showAlertView];
+            [self showNotificationAlertView];
             return NO;
         }else {
             NSLog(@"打开了通知");
@@ -259,7 +274,7 @@
     }
 }
 
-- (void)showAlertView {
+- (void)showNotificationAlertView {
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"通知" message:@"未获得通知权限，请前去设置" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
