@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXViewController.h"
 
-@interface ZXHomeViewController : UIViewController
+@interface ZXHomeViewController :ZXViewController
 
 
 @end

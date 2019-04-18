@@ -46,7 +46,9 @@
     ZXTipViewController *vc2 = [[ZXTipViewController alloc]init];
     vc2.title = NSLocalizedString(@"提示", @"提示");
     
-    self.viewControllers = @[vc1,vc2];
+    ZXNavigationController *navi1 = [[ZXNavigationController alloc] initWithRootViewController:vc1];
+    
+    self.viewControllers = @[navi1,vc2];
     self.selectedIndex = 0;
     
     UITabBarItem *item;

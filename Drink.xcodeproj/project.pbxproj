@@ -27,6 +27,10 @@
 		F5D87FB221AE119D006E82F7 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAB21AE119D006E82F7 /* WeakProxy.m */; };
 		F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAE21AE119D006E82F7 /* JYWaveView.m */; };
 		F5D87FB421AE119D006E82F7 /* GWRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FB021AE119D006E82F7 /* GWRoundView.m */; };
+		F5E81F6822688E3B00425BAE /* ZXChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E81F6622688E3B00425BAE /* ZXChartController.m */; };
+		F5E81F6922688E3B00425BAE /* ZXChartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E81F6722688E3B00425BAE /* ZXChartController.xib */; };
+		F5E81F6D2268999F00425BAE /* UIViewController+ZXHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E81F6C2268999F00425BAE /* UIViewController+ZXHidden.m */; };
+		F5E81F702268A48300425BAE /* ZXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E81F6F2268A48300425BAE /* ZXViewController.m */; };
 		F5F5F12521E61B3600751B32 /* ZXTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F12321E61B3600751B32 /* ZXTipCell.m */; };
 		F5F5F12621E61B3600751B32 /* ZXTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5F12421E61B3600751B32 /* ZXTipCell.xib */; };
 		F5F5F12A21E766D500751B32 /* ZXLocalPushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F12921E766D500751B32 /* ZXLocalPushHelper.m */; };
@@ -73,6 +77,13 @@
 		F5D87FAE21AE119D006E82F7 /* JYWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYWaveView.m; sourceTree = "<group>"; };
 		F5D87FB021AE119D006E82F7 /* GWRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWRoundView.m; sourceTree = "<group>"; };
 		F5D87FB121AE119D006E82F7 /* GWRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWRoundView.h; sourceTree = "<group>"; };
+		F5E81F6522688E3B00425BAE /* ZXChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXChartController.h; sourceTree = "<group>"; };
+		F5E81F6622688E3B00425BAE /* ZXChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXChartController.m; sourceTree = "<group>"; };
+		F5E81F6722688E3B00425BAE /* ZXChartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXChartController.xib; sourceTree = "<group>"; };
+		F5E81F6B2268999F00425BAE /* UIViewController+ZXHidden.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZXHidden.h"; sourceTree = "<group>"; };
+		F5E81F6C2268999F00425BAE /* UIViewController+ZXHidden.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZXHidden.m"; sourceTree = "<group>"; };
+		F5E81F6E2268A48300425BAE /* ZXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXViewController.h; sourceTree = "<group>"; };
+		F5E81F6F2268A48300425BAE /* ZXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXViewController.m; sourceTree = "<group>"; };
 		F5F5F12221E61B3600751B32 /* ZXTipCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXTipCell.h; sourceTree = "<group>"; };
 		F5F5F12321E61B3600751B32 /* ZXTipCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXTipCell.m; sourceTree = "<group>"; };
 		F5F5F12421E61B3600751B32 /* ZXTipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTipCell.xib; sourceTree = "<group>"; };
@@ -131,6 +142,7 @@
 		F590A4142178A584009CFBC7 /* Drink */ = {
 			isa = PBXGroup;
 			children = (
+				F5E81F6A2268995400425BAE /* categale */,
 				F59AB71721D4E80300D98D78 /* Base */,
 				F5AE213821DCE0C20087A206 /* Helper */,
 				F5F5F12121E61ACF00751B32 /* view */,
@@ -169,6 +181,9 @@
 				F59AB71221D062F300D98D78 /* ZXTipViewController.h */,
 				F59AB71321D062F300D98D78 /* ZXTipViewController.m */,
 				F59AB71421D062F300D98D78 /* ZXTipViewController.xib */,
+				F5E81F6522688E3B00425BAE /* ZXChartController.h */,
+				F5E81F6622688E3B00425BAE /* ZXChartController.m */,
+				F5E81F6722688E3B00425BAE /* ZXChartController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +195,8 @@
 				F59AB71921D4E85F00D98D78 /* ZXTabBarController.m */,
 				F59AB71B21D4E8F200D98D78 /* ZXNavigationController.h */,
 				F59AB71C21D4E8F200D98D78 /* ZXNavigationController.m */,
+				F5E81F6E2268A48300425BAE /* ZXViewController.h */,
+				F5E81F6F2268A48300425BAE /* ZXViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -253,6 +270,15 @@
 				F5D87FB021AE119D006E82F7 /* GWRoundView.m */,
 			);
 			path = ChooseView;
+			sourceTree = "<group>";
+		};
+		F5E81F6A2268995400425BAE /* categale */ = {
+			isa = PBXGroup;
+			children = (
+				F5E81F6B2268999F00425BAE /* UIViewController+ZXHidden.h */,
+				F5E81F6C2268999F00425BAE /* UIViewController+ZXHidden.m */,
+			);
+			path = categale;
 			sourceTree = "<group>";
 		};
 		F5F5F12121E61ACF00751B32 /* view */ = {
@@ -335,6 +361,7 @@
 			files = (
 				F5F5F12621E61B3600751B32 /* ZXTipCell.xib in Resources */,
 				F590A4222178A585009CFBC7 /* LaunchScreen.storyboard in Resources */,
+				F5E81F6922688E3B00425BAE /* ZXChartController.xib in Resources */,
 				F590A41F2178A585009CFBC7 /* Assets.xcassets in Resources */,
 				F59AB71621D062F300D98D78 /* ZXTipViewController.xib in Resources */,
 				F590A41D2178A584009CFBC7 /* Main.storyboard in Resources */,
@@ -379,12 +406,15 @@
 				F590A41A2178A584009CFBC7 /* ZXHomeViewController.m in Sources */,
 				F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */,
 				F590A4252178A585009CFBC7 /* main.m in Sources */,
+				F5E81F6822688E3B00425BAE /* ZXChartController.m in Sources */,
 				F5AE213B21DE2DBE0087A206 /* ZXDrinkDatabaseTool.m in Sources */,
 				F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */,
 				F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */,
+				F5E81F6D2268999F00425BAE /* UIViewController+ZXHidden.m in Sources */,
 				F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */,
 				F59AB71A21D4E85F00D98D78 /* ZXTabBarController.m in Sources */,
 				F59AB71521D062F300D98D78 /* ZXTipViewController.m in Sources */,
+				F5E81F702268A48300425BAE /* ZXViewController.m in Sources */,
 				F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

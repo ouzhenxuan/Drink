@@ -15,11 +15,13 @@
 #import "ZXDrinkDatabaseTool.h"
 #import <UserNotifications/UserNotifications.h>
 #import "ZXLocalPushHelper.h"
+#import "ZXNavigationController.h"
+#import "ZXChartController.h"
 
 #define waveHeight 6
 #define viewHeight ScreenBoundsHeight-TabBarH
 
-@interface ZXHomeViewController () <ChooseRoundViewDelegate>
+@interface ZXHomeViewController () <ChooseRoundViewDelegate , UINavigationControllerDelegate>
 {
     int desiredValue;
 }
@@ -48,6 +50,28 @@
     [self readTheUserValue];
 //    检查通知功能是否开启
     [self checkUserNotificationEnable];
+//    左上统计按钮
+    [self setStatisticsBtn];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
+}
+
+
+- (void)setStatisticsBtn{
+    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 44, 44, 44)];
+    [self.view addSubview:btn];
+    btn.backgroundColor = [UIColor greenColor];
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:10]];
+    [btn setTitle:@"统计" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)btnClick:(UIButton *)btn{
+    ZXChartController * chartVc = [[ZXChartController alloc] init];
+    [self.naviController pushViewController:chartVc animated:YES hideBottomBar:YES];
 }
 
 - (void)setupTheTitle{
