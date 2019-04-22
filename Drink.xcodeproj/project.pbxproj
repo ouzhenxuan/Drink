@@ -28,12 +28,16 @@
 		F5D87FB321AE119D006E82F7 /* JYWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FAE21AE119D006E82F7 /* JYWaveView.m */; };
 		F5D87FB421AE119D006E82F7 /* GWRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D87FB021AE119D006E82F7 /* GWRoundView.m */; };
 		F5E81F6822688E3B00425BAE /* ZXChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E81F6622688E3B00425BAE /* ZXChartController.m */; };
-		F5E81F6922688E3B00425BAE /* ZXChartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E81F6722688E3B00425BAE /* ZXChartController.xib */; };
 		F5E81F6D2268999F00425BAE /* UIViewController+ZXHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E81F6C2268999F00425BAE /* UIViewController+ZXHidden.m */; };
 		F5E81F702268A48300425BAE /* ZXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E81F6F2268A48300425BAE /* ZXViewController.m */; };
 		F5F5F12521E61B3600751B32 /* ZXTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F12321E61B3600751B32 /* ZXTipCell.m */; };
 		F5F5F12621E61B3600751B32 /* ZXTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5F12421E61B3600751B32 /* ZXTipCell.xib */; };
 		F5F5F12A21E766D500751B32 /* ZXLocalPushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F12921E766D500751B32 /* ZXLocalPushHelper.m */; };
+		F5FAC4E8226E28CC00B661E5 /* demo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC4E7226E28CC00B661E5 /* demo2.swift */; };
+		F5FAC4EC226E2AA500B661E5 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC4EB226E2AA500B661E5 /* DemoBaseViewController.m */; };
+		F5FAC4F3226E2C0E00B661E5 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC4F0226E2C0E00B661E5 /* XYMarkerView.swift */; };
+		F5FAC4F4226E2C0E00B661E5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC4F1226E2C0E00B661E5 /* BalloonMarker.swift */; };
+		F5FAC4F5226E2C0E00B661E5 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC4F2226E2C0E00B661E5 /* RadarMarkerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +83,6 @@
 		F5D87FB121AE119D006E82F7 /* GWRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWRoundView.h; sourceTree = "<group>"; };
 		F5E81F6522688E3B00425BAE /* ZXChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXChartController.h; sourceTree = "<group>"; };
 		F5E81F6622688E3B00425BAE /* ZXChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXChartController.m; sourceTree = "<group>"; };
-		F5E81F6722688E3B00425BAE /* ZXChartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXChartController.xib; sourceTree = "<group>"; };
 		F5E81F6B2268999F00425BAE /* UIViewController+ZXHidden.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZXHidden.h"; sourceTree = "<group>"; };
 		F5E81F6C2268999F00425BAE /* UIViewController+ZXHidden.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZXHidden.m"; sourceTree = "<group>"; };
 		F5E81F6E2268A48300425BAE /* ZXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXViewController.h; sourceTree = "<group>"; };
@@ -89,6 +92,13 @@
 		F5F5F12421E61B3600751B32 /* ZXTipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTipCell.xib; sourceTree = "<group>"; };
 		F5F5F12821E766D500751B32 /* ZXLocalPushHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXLocalPushHelper.h; sourceTree = "<group>"; };
 		F5F5F12921E766D500751B32 /* ZXLocalPushHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXLocalPushHelper.m; sourceTree = "<group>"; };
+		F5FAC4E6226E28CC00B661E5 /* Drink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drink-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5FAC4E7226E28CC00B661E5 /* demo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo2.swift; sourceTree = "<group>"; };
+		F5FAC4EA226E2AA500B661E5 /* DemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
+		F5FAC4EB226E2AA500B661E5 /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
+		F5FAC4F0226E2C0E00B661E5 /* XYMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
+		F5FAC4F1226E2C0E00B661E5 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		F5FAC4F2226E2C0E00B661E5 /* RadarMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
 		FDBB06E9893B7E5AC0126F00 /* Pods-Drink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Drink/Pods-Drink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +152,7 @@
 		F590A4142178A584009CFBC7 /* Drink */ = {
 			isa = PBXGroup;
 			children = (
+				F5FAC4E5226E289F00B661E5 /* Supporting Files */,
 				F5E81F6A2268995400425BAE /* categale */,
 				F59AB71721D4E80300D98D78 /* Base */,
 				F5AE213821DCE0C20087A206 /* Helper */,
@@ -149,14 +160,6 @@
 				F59AB71121D0626D00D98D78 /* Controller */,
 				F5AE213221C278380087A206 /* Model */,
 				F5D87FA921AE119D006E82F7 /* ThirdParty */,
-				F590A4152178A584009CFBC7 /* AppDelegate.h */,
-				F590A4162178A584009CFBC7 /* AppDelegate.m */,
-				F590A41B2178A584009CFBC7 /* Main.storyboard */,
-				F590A41E2178A585009CFBC7 /* Assets.xcassets */,
-				F590A4202178A585009CFBC7 /* LaunchScreen.storyboard */,
-				F590A4232178A585009CFBC7 /* Info.plist */,
-				F590A4242178A585009CFBC7 /* main.m */,
-				F590A42B217976B7009CFBC7 /* Drink-Prefix.pch */,
 			);
 			path = Drink;
 			sourceTree = "<group>";
@@ -176,14 +179,12 @@
 		F59AB71121D0626D00D98D78 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F5FAC4E9226E2A8300B661E5 /* Charts */,
 				F590A4182178A584009CFBC7 /* ZXHomeViewController.h */,
 				F590A4192178A584009CFBC7 /* ZXHomeViewController.m */,
 				F59AB71221D062F300D98D78 /* ZXTipViewController.h */,
 				F59AB71321D062F300D98D78 /* ZXTipViewController.m */,
 				F59AB71421D062F300D98D78 /* ZXTipViewController.xib */,
-				F5E81F6522688E3B00425BAE /* ZXChartController.h */,
-				F5E81F6622688E3B00425BAE /* ZXChartController.m */,
-				F5E81F6722688E3B00425BAE /* ZXChartController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +301,45 @@
 			path = LocalPush;
 			sourceTree = "<group>";
 		};
+		F5FAC4E5226E289F00B661E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F590A42B217976B7009CFBC7 /* Drink-Prefix.pch */,
+				F590A4152178A584009CFBC7 /* AppDelegate.h */,
+				F590A4162178A584009CFBC7 /* AppDelegate.m */,
+				F590A41B2178A584009CFBC7 /* Main.storyboard */,
+				F590A41E2178A585009CFBC7 /* Assets.xcassets */,
+				F590A4202178A585009CFBC7 /* LaunchScreen.storyboard */,
+				F590A4232178A585009CFBC7 /* Info.plist */,
+				F590A4242178A585009CFBC7 /* main.m */,
+				F5FAC4E7226E28CC00B661E5 /* demo2.swift */,
+				F5FAC4E6226E28CC00B661E5 /* Drink-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5FAC4E9226E2A8300B661E5 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				F5FAC4EF226E2C0E00B661E5 /* Components */,
+				F5E81F6522688E3B00425BAE /* ZXChartController.h */,
+				F5E81F6622688E3B00425BAE /* ZXChartController.m */,
+				F5FAC4EA226E2AA500B661E5 /* DemoBaseViewController.h */,
+				F5FAC4EB226E2AA500B661E5 /* DemoBaseViewController.m */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		F5FAC4EF226E2C0E00B661E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F5FAC4F0226E2C0E00B661E5 /* XYMarkerView.swift */,
+				F5FAC4F1226E2C0E00B661E5 /* BalloonMarker.swift */,
+				F5FAC4F2226E2C0E00B661E5 /* RadarMarkerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,6 +374,7 @@
 				TargetAttributes = {
 					F590A4112178A584009CFBC7 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -362,7 +403,6 @@
 			files = (
 				F5F5F12621E61B3600751B32 /* ZXTipCell.xib in Resources */,
 				F590A4222178A585009CFBC7 /* LaunchScreen.storyboard in Resources */,
-				F5E81F6922688E3B00425BAE /* ZXChartController.xib in Resources */,
 				F590A41F2178A585009CFBC7 /* Assets.xcassets in Resources */,
 				F59AB71621D062F300D98D78 /* ZXTipViewController.xib in Resources */,
 				F590A41D2178A584009CFBC7 /* Main.storyboard in Resources */,
@@ -423,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FAC4F5226E2C0E00B661E5 /* RadarMarkerView.swift in Sources */,
 				F5AE213121C2782F0087A206 /* ZXUserValueModel.m in Sources */,
 				F5D87FB221AE119D006E82F7 /* WeakProxy.m in Sources */,
 				F59AB71D21D4E8F200D98D78 /* ZXNavigationController.m in Sources */,
@@ -430,15 +471,19 @@
 				F5F5F12A21E766D500751B32 /* ZXLocalPushHelper.m in Sources */,
 				F5AE213621DCD31E0087A206 /* ZXDatabase.m in Sources */,
 				F5F5F12521E61B3600751B32 /* ZXTipCell.m in Sources */,
+				F5FAC4F3226E2C0E00B661E5 /* XYMarkerView.swift in Sources */,
 				F590A41A2178A584009CFBC7 /* ZXHomeViewController.m in Sources */,
 				F5D87FA121AD3134006E82F7 /* UIImage+ZXImageWithColor.m in Sources */,
 				F590A4252178A585009CFBC7 /* main.m in Sources */,
 				F5E81F6822688E3B00425BAE /* ZXChartController.m in Sources */,
 				F5AE213B21DE2DBE0087A206 /* ZXDrinkDatabaseTool.m in Sources */,
+				F5FAC4EC226E2AA500B661E5 /* DemoBaseViewController.m in Sources */,
 				F590A4172178A584009CFBC7 /* AppDelegate.m in Sources */,
+				F5FAC4F4226E2C0E00B661E5 /* BalloonMarker.swift in Sources */,
 				F590A42F2179779E009CFBC7 /* ZXConstants.m in Sources */,
 				F5E81F6D2268999F00425BAE /* UIViewController+ZXHidden.m in Sources */,
 				F5D87F9221A6C34D006E82F7 /* UIView+ZXCornerRadius.m in Sources */,
+				F5FAC4E8226E28CC00B661E5 /* demo2.swift in Sources */,
 				F59AB71A21D4E85F00D98D78 /* ZXTabBarController.m in Sources */,
 				F59AB71521D062F300D98D78 /* ZXTipViewController.m in Sources */,
 				F5E81F702268A48300425BAE /* ZXViewController.m in Sources */,
@@ -584,17 +629,19 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GTMKG6EH2C;
-				GCC_PREFIX_HEADER = "Drink/Drink-Prefix.pch";
+				GCC_PREFIX_HEADER = "Drink/Supporting Files/Drink-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
 				);
-				INFOPLIST_FILE = Drink/Info.plist;
+				INFOPLIST_FILE = "Drink/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +649,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozx.Drink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Drink/Supporting Files/Drink-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -612,17 +662,19 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GTMKG6EH2C;
-				GCC_PREFIX_HEADER = "Drink/Drink-Prefix.pch";
+				GCC_PREFIX_HEADER = "Drink/Supporting Files/Drink-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
 				);
-				INFOPLIST_FILE = Drink/Info.plist;
+				INFOPLIST_FILE = "Drink/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +682,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ozx.Drink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Drink/Supporting Files/Drink-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
