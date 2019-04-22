@@ -7,7 +7,7 @@
 //
 
 #import "ZXDrinkDatabaseTool.h"
-#import <FMDB.h>
+#import <FMDB/FMDB.h>
 
 
 static FMDatabase *_db;

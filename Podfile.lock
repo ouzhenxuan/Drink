@@ -14,14 +14,18 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - FMDB (2.7.2):
-    - FMDB/standard (= 2.7.2)
-  - FMDB/standard (2.7.2)
+  - Charts (3.3):
+    - Charts/Core (= 3.3)
+  - Charts/Core (3.3)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
-  - MJExtension (3.0.13)
+  - MJExtension (3.0.16)
 
 DEPENDENCIES:
   - AFNetworking
+  - Charts
   - FMDB
   - Masonry
   - MJExtension
@@ -29,16 +33,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Charts
     - FMDB
     - Masonry
     - MJExtension
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  Charts: a5609adcbd70a0f7e15c6984d7e9b5ceecf3b71d
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJExtension: 54dbbf6ee728f1a88e9aad904353d007831c7847
 
-PODFILE CHECKSUM: 47e63a575b0a6b52e68e8a8077440bf9e549573d
+PODFILE CHECKSUM: 73edd1db33d5106782dff30036aa81e32e8caee2
 
 COCOAPODS: 1.5.3

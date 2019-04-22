@@ -5,6 +5,7 @@ pod 'AFNetworking'
 pod 'MJExtension' 
 pod 'Masonry'
 pod 'FMDB'
-pod 'Charts/Realm'
+use_frameworks!
+pod 'Charts'
 end
 

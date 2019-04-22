@@ -7,7 +7,7 @@
 //
 
 #import "ZXHomeViewController.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 #import "UIView+ZXCornerRadius.h"
 #import "GWRoundView.h"
 #import "JYWaveView.h"
@@ -20,6 +20,8 @@
 
 #define waveHeight 6
 #define viewHeight ScreenBoundsHeight-TabBarH
+
+//@import Charts;
 
 @interface ZXHomeViewController () <ChooseRoundViewDelegate , UINavigationControllerDelegate>
 {

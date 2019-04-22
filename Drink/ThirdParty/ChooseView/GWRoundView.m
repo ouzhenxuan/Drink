@@ -9,7 +9,7 @@
 #import "GWRoundView.h"
 #import "UIView+ZXCornerRadius.h"
 #import "UIImage+ZXImageWithColor.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 @interface GWRoundView (){
     CGFloat _Width;
     CGFloat _Height;
