@@ -14,9 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZXViewController : UIViewController
 
-@property(nonatomic, strong, readonly) ZXTabBarController *tabController;
-@property(nonatomic, strong, readonly) ZXNavigationController * naviController;
-
 @end
 
 NS_ASSUME_NONNULL_END

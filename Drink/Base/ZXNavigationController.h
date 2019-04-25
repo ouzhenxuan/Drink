@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZXNavigationController : UINavigationController
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated hideBottomBar:(BOOL)hide;
-
 @end
 
 NS_ASSUME_NONNULL_END

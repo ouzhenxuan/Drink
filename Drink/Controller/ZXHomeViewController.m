@@ -73,7 +73,8 @@
 
 - (void)btnClick:(UIButton *)btn{
     ZXChartController * chartVc = [[ZXChartController alloc] init];
-    [self.naviController pushViewController:chartVc animated:YES hideBottomBar:YES];
+    [self.navigationController pushViewController:chartVc animated:YES];
+    
 }
 
 - (void)setupTheTitle{

@@ -6,9 +6,9 @@
 //  Copyright © 2019 区振轩. All rights reserved.
 //
 
-#import "UIViewController+ZXHidden.h"
+#import "UIViewController+ZXNavigationBarHidden.h"
 
-@implementation UIViewController (ZXHidden)
+@implementation UIViewController (ZXNavigationBarHidden)
 
 - (void)navigationController:(UINavigationController*)navigationController willShowViewController:(UIViewController*)viewController animated:(BOOL)animated {
     

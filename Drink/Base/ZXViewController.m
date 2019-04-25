@@ -17,30 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    //JmoVxia---统一设置返回按钮
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] init];
+    backBtn.title = NSLocalizedString(@"返回", nil);
+    self.navigationItem.backBarButtonItem = backBtn;
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark - getter
-
-- (ZXNavigationController *)naviController
-{
-    return (ZXNavigationController *)self.navigationController;
-}
-
-- (ZXTabBarController *)tabController
-{
-    return (ZXTabBarController *)self.tabBarController;
-}
-
 
 @end

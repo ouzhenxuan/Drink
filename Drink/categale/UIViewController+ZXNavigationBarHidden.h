@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (ZXHidden)<UINavigationControllerDelegate>
+@interface UIViewController (ZXNavigationBarHidden)<UINavigationControllerDelegate>
 
 @end
 

@@ -28,9 +28,12 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated hideBottomBar:(BOOL)hide
-{
-    viewController.hidesBottomBarWhenPushed = hide;
-    [self pushViewController:viewController animated:animated];
+//隐藏tabbar
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count > 0) { // 如果现在push的不是栈底控制器(最先push进来的那个控制器)
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    // 修改tabBra的frame
+    [super pushViewController:viewController animated:animated];
 }
 @end

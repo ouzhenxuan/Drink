@@ -14,7 +14,7 @@
 #ifdef __OBJC__
 #import "ZXConstants.h"
 #import "ZXTool.h"
-#import "UIViewController+ZXHidden.h"
+#import "UIViewController+ZXNavigationBarHidden.h"
 #endif
 
 
