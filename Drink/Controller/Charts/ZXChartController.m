@@ -8,13 +8,15 @@
 
 #import "ZXChartController.h"
 #import "Drink-Swift.h"
+#import "ZXDatabase.h"
+#import "ZXDrinkDatabaseTool.h"
 
 
 @interface ZXChartController ()<ChartViewDelegate>
 
 @property (nonatomic, strong) IBOutlet LineChartView *chartView;
-@property (nonatomic, strong) IBOutlet UISlider *sliderX;
-@property (nonatomic, strong) IBOutlet UISlider *sliderY;
+@property (nonatomic, strong) IBOutlet UISlider *sliderX;               ///< 数据数量c
+@property (nonatomic, strong) IBOutlet UISlider *sliderY;               ///< 数据随机大小
 @property (nonatomic, strong) IBOutlet UITextField *sliderTextX;
 @property (nonatomic, strong) IBOutlet UITextField *sliderTextY;
 
@@ -25,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self getFMDBData];
     self.view.backgroundColor = [UIColor whiteColor];
     _chartView = [[LineChartView alloc] initWithFrame:CGRectMake(0, 0, ScreenBoundsWidth, 500)];
     _sliderX = [[UISlider alloc] init];
@@ -66,33 +69,37 @@
     _chartView.drawGridBackgroundEnabled = NO;
     
     // x-axis limit line
-    ChartLimitLine *llXAxis = [[ChartLimitLine alloc] initWithLimit:10.0 label:@"Index 10"];
-    llXAxis.lineWidth = 4.0;
-    llXAxis.lineDashLengths = @[@(10.f), @(10.f), @(0.f)];
-    llXAxis.labelPosition = ChartLimitLabelPositionBottomRight;
-    llXAxis.valueFont = [UIFont systemFontOfSize:10.f];
+//    ChartLimitLine *llXAxis = [[ChartLimitLine alloc] initWithLimit:10.0 label:@"Index 10"];
+//    llXAxis.lineWidth = 4.0;
+//    llXAxis.lineDashLengths = @[@(10.f), @(10.f), @(0.f)];
+//    llXAxis.labelPosition = ChartLimitLabelPositionBottomRight;
+//    llXAxis.valueFont = [UIFont systemFontOfSize:10.f];
     
-    //[_chartView.xAxis addLimitLine:llXAxis];
+//    [_chartView.xAxis addLimitLine:llXAxis];
     
-    _chartView.xAxis.gridLineDashLengths = @[@10.0, @10.0];
-    _chartView.xAxis.gridLineDashPhase = 0.f;
+//    _chartView.xAxis.gridLineDashLengths = @[@10.0, @10.0];
+//    _chartView.xAxis.gridLineDashPhase = 0.f;
     
-    ChartLimitLine *ll1 = [[ChartLimitLine alloc] initWithLimit:150.0 label:@"Upper Limit"];
-    ll1.lineWidth = 4.0;
-    ll1.lineDashLengths = @[@5.f, @5.f];
-    ll1.labelPosition = ChartLimitLabelPositionTopRight;
-    ll1.valueFont = [UIFont systemFontOfSize:10.0];
+
+//    对x轴的设计
+    ChartXAxis*xAxis =_chartView.xAxis;
+//    xAxis.
+    xAxis.axisLineColor = [UIColor lightGrayColor];
+    xAxis.labelPosition = XAxisLabelPositionBottom;
+    xAxis.labelFont = [UIFont systemFontOfSize:12];
+    xAxis.labelTextColor = [UIColor lightGrayColor];
+    xAxis.axisMinimum = 0.3;  // label间距
+    xAxis.granularity = 1.0;
+    xAxis.axisMinimum = 100;
+    xAxis.drawAxisLineEnabled = YES; //是否画x轴线
+    xAxis.drawGridLinesEnabled = NO;    //是否画网格
+    xAxis.labelCount = 10;//x轴上的个数
     
-    ChartLimitLine *ll2 = [[ChartLimitLine alloc] initWithLimit:-30.0 label:@"Lower Limit"];
-    ll2.lineWidth = 4.0;
-    ll2.lineDashLengths = @[@5.f, @5.f];
-    ll2.labelPosition = ChartLimitLabelPositionBottomRight;
-    ll2.valueFont = [UIFont systemFontOfSize:10.0];
-    
+//    对Y轴的设计
     ChartYAxis *leftAxis = _chartView.leftAxis;
     [leftAxis removeAllLimitLines];
-    [leftAxis addLimitLine:ll1];
-    [leftAxis addLimitLine:ll2];
+//    [leftAxis addLimitLine:ll1];
+//    [leftAxis addLimitLine:ll2];
     leftAxis.axisMaximum = 200.0;
     leftAxis.axisMinimum = -50.0;
     leftAxis.gridLineDashLengths = @[@5.f, @5.f];
@@ -104,6 +111,7 @@
     //[_chartView.viewPortHandler setMaximumScaleY: 2.f];
     //[_chartView.viewPortHandler setMaximumScaleX: 2.f];
     
+    ///< 显示数值的气泡
     BalloonMarker *marker = [[BalloonMarker alloc]
                              initWithColor: [UIColor colorWithWhite:180/255. alpha:1.0]
                              font: [UIFont systemFontOfSize:12.0]
@@ -114,10 +122,36 @@
     _chartView.marker = marker;
     
     _chartView.legend.form = ChartLegendFormLine;
+    
+    _chartView.legend.form = ChartLegendFormNone;   //说明图
+    _chartView.dragEnabled = NO; //拖动手势
+    _chartView.pinchZoomEnabled = NO; //捏合手势
+    _chartView.rightAxis.enabled = NO; //隐藏右Y轴
+    _chartView.chartDescription.enabled = NO; //不显示描述label
+    _chartView.doubleTapToZoomEnabled = NO; //禁止双击缩放      _linechartView.drawGridBackgroundEnabled = NO;
+    _chartView.drawBordersEnabled= NO;
+    _chartView.dragEnabled = YES;//拖动气泡
+    [_chartView animateWithXAxisDuration:2.20 easingOption:ChartEasingOptionEaseOutBack]; //加载动画时长
+    
+    ///< 上下限制线
+    //    ChartLimitLine *ll1 = [[ChartLimitLine alloc] initWithLimit:150.0 label:@"Upper Limit"];
+    //    ll1.lineWidth = 4.0;
+    //    ll1.lineDashLengths = @[@5.f, @5.f];
+    //    ll1.labelPosition = ChartLimitLabelPositionTopRight;
+    //    ll1.valueFont = [UIFont systemFontOfSize:10.0];
+    
+    //    ChartLimitLine *ll2 = [[ChartLimitLine alloc] initWithLimit:-30.0 label:@"Lower Limit"];
+    //    ll2.lineWidth = 4.0;
+    //    ll2.lineDashLengths = @[@5.f, @5.f];
+    //    ll2.labelPosition = ChartLimitLabelPositionBottomRight;
+    //    ll2.valueFont = [UIFont systemFontOfSize:10.0];
+    
     _sliderX.maximumValue = 1500;
     _sliderY.maximumValue = 150;
     _sliderX.value = 45.0;
     _sliderY.value = 100.0;
+    
+    
     [self slidersValueChanged:nil];
     
     [_chartView animateWithXAxisDuration:2.5];
@@ -143,7 +177,8 @@
         return;
     }
     
-    [self setDataCount:_sliderX.value range:_sliderY.value];
+    [self setDataCount:10 range:_sliderY.value];
+//    [self setDataCount:_sliderX.value range:_sliderY.value];
 }
 
 - (void)setDataCount:(int)count range:(double)range
@@ -153,7 +188,8 @@
     for (int i = 0; i < count; i++)
     {
         double val = arc4random_uniform(range) + 3;
-        [values addObject:[[ChartDataEntry alloc] initWithX:i y:val icon: [UIImage imageNamed:@"icon"]]];
+        [values addObject:[[ChartDataEntry alloc] initWithX:i+100 y:val icon: [UIImage imageNamed:@"chooser-button-input"]]];
+//        [values addObject:[[ChartDataEntry alloc] initWithX:i y:val icon: [UIImage imageNamed:@"icon"]]];
     }
     
     LineChartDataSet *set1 = nil;
@@ -291,4 +327,11 @@
     NSLog(@"chartValueNothingSelected");
 }
 
+-(void)getFMDBData{
+    NSArray * arr =  [ZXDrinkDatabaseTool allModelsWithUserId:APPLICATION_UUID] ;
+    NSLog(@"asd");
+    
+    
+    
+}
 @end

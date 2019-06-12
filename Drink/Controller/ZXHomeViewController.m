@@ -17,6 +17,7 @@
 #import "ZXLocalPushHelper.h"
 #import "ZXNavigationController.h"
 #import "ZXChartController.h"
+#import "NSDate+ZXCalendar.h"
 
 #define waveHeight 6
 #define viewHeight ScreenBoundsHeight-TabBarH
@@ -37,6 +38,16 @@
 
 @implementation ZXHomeViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
+    
+//    NSDate *now = [NSDate date];
+
+    NSDate * firstOfWeek = [NSDate getWeekFirstDayDate];
+    NSLog(@"%@",firstOfWeek);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -56,10 +67,7 @@
     [self setStatisticsBtn];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.delegate = self;
-}
+
 
 
 - (void)setStatisticsBtn{
@@ -220,7 +228,8 @@
         make.bottom.equalTo(self.view.mas_bottom).mas_offset(-(offsetHeight - waveHeight));
     }];
     [UIView animateWithDuration:1 animations:^{
-            [self.view layoutIfNeeded];
+        //获取控件正确的frame
+        [self.view layoutIfNeeded];
     }];
     [_waterValueLabel setText:[NSString stringWithFormat:@"%ld ml",_totalWater]];
 }

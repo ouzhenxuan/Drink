@@ -45,6 +45,51 @@ static FMDatabase *_db;
     return models;
 }
 
++ (NSMutableArray <ZXUserValueModel *> *)todayModelsWithUserId:(NSString *)userId
+{
+    [_db open];
+    
+    FMResultSet *set = [_db executeQuery:@"SELECT * FROM t_userInfo WHERE userId=? ORDER BY id ASC;",userId];
+    
+    NSMutableArray *models = [NSMutableArray array];
+    while (set.next) {
+        ZXUserValueModel *temp = [[ZXUserValueModel alloc] init];
+        temp.userName = [set stringForColumn:@"username"];
+        temp.userId = [set stringForColumn:@"userId"];
+        temp.waterValue = [set intForColumn:@"waterValue"];
+        temp.createDate = [NSDate dateWithTimeIntervalSince1970:[set doubleForColumn:@"createdate"]];
+        [models addObject:temp];
+    }
+    
+    [_db close];
+    return models;
+}
+
++ (NSMutableArray <ZXUserValueModel *> *)thisWeekModelsWithUserId:(NSString *)userId
+{
+    [_db open];
+    
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday|NSCalendarUnitDay fromDate:now];
+    
+    
+    FMResultSet *set = [_db executeQuery:@"SELECT * FROM t_userInfo WHERE userId=? and createdate> ORDER BY id ASC;",userId];
+    
+    NSMutableArray *models = [NSMutableArray array];
+    while (set.next) {
+        ZXUserValueModel *temp = [[ZXUserValueModel alloc] init];
+        temp.userName = [set stringForColumn:@"username"];
+        temp.userId = [set stringForColumn:@"userId"];
+        temp.waterValue = [set intForColumn:@"waterValue"];
+        temp.createDate = [NSDate dateWithTimeIntervalSince1970:[set doubleForColumn:@"createdate"]];
+        [models addObject:temp];
+    }
+    
+    [_db close];
+    return models;
+}
+
 + (void)addModel:(ZXUserValueModel *)model;
 {
     BOOL isSuccess=[_db open];
